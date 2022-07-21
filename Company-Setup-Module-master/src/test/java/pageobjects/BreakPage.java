@@ -74,7 +74,7 @@ public class BreakPage extends WebBasePage
 	        String[] expectedValue = {"Shifts","Break Name","Start Time","End Time"};
 	        for(Object expected : expectedValue)
 	        {
-	        	WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected +":']"), 20);
+	        	WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected +"']"), 20);
 	        	if (AsteriskField!= null)
 	        	{
 	        		  getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");

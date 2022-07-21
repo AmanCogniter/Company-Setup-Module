@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\aanand\AppData\Local\Temp\testng-eclipse--128743964\testng-customsuite.xml</span>
+                    <span>C:\Users\aanand\AppData\Local\Temp\testng-eclipse-459594236\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testcases.CannedReply" class="method navigator-link" hash-for-method="AddCannedReply">AddCannedReply</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testcases.CompanyHolidays" class="method navigator-link" hash-for-method="ActiveInactiveSearch">ActiveInactiveSearch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcases.CompanyHolidays" class="method navigator-link" hash-for-method="AddCompanyHolidayFullDay">AddCompanyHolidayFullDay</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testcases.CompanyHolidays" class="method navigator-link" hash-for-method="ValidationCheck">ValidationCheck</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -122,14 +132,28 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testcases.CannedReply</span>
+              <span class="class-name">testcases.CompanyHolidays</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="AddCannedReply">
-                  </a> <!-- AddCannedReply -->
-                  <span class="method-name">AddCannedReply</span>
+                  <a name="ActiveInactiveSearch">
+                  </a> <!-- ActiveInactiveSearch -->
+                  <span class="method-name">ActiveInactiveSearch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddCompanyHolidayFullDay">
+                  </a> <!-- AddCompanyHolidayFullDay -->
+                  <span class="method-name">AddCompanyHolidayFullDay</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidationCheck">
+                  </a> <!-- ValidationCheck -->
+                  <span class="method-name">ValidationCheck</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +161,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\aanand\AppData\Local\Temp\testng-eclipse--128743964\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\aanand\AppData\Local\Temp\testng-eclipse-459594236\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +170,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testcases.CannedReply&quot;/&gt;
+      &lt;class name=&quot;testcases.CompanyHolidays&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -186,16 +210,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'AddCannedReply')
-data.setCell(0, 2, 'testcases.CannedReply')
-data.setCell(0, 3, 49169);
+data.setCell(0, 1, 'ActiveInactiveSearch')
+data.setCell(0, 2, 'testcases.CompanyHolidays')
+data.setCell(0, 3, 82083);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'AddCompanyHolidayFullDay')
+data.setCell(1, 2, 'testcases.CompanyHolidays')
+data.setCell(1, 3, 66670);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'ValidationCheck')
+data.setCell(2, 2, 'testcases.CompanyHolidays')
+data.setCell(2, 3, 43306);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 49 seconds</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -210,18 +242,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testcases.CannedReply</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">ValidationCheck</span>
-                <br/>
-                <span class="ignored-method-name">SearchActiveInactiveDeleteCannedReply</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -230,30 +253,54 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testcases.CannedReply</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testcases.CompanyHolidays</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod(public void testcases.CannedReply.AddCannedReply())</span>
-                <span class="method-start">15408 ms</span>
+                <span class="method-name">beforeMethod(public void testcases.CompanyHolidays.ValidationCheck())</span>
+                <span class="method-start">14648 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">AddCannedReply</span>
-                <span class="method-start">15575 ms</span>
+                <span class="method-name">ValidationCheck</span>
+                <span class="method-start">14759 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">reportWrapUp([TestResult name=AddCannedReply status=SUCCESS method=CannedReply.AddCannedReply()[pri:2, instance:t...)</span>
-                <span class="method-start">64748 ms</span>
+                <span class="method-name">reportWrapUp([TestResult name=ValidationCheck status=SUCCESS method=CompanyHolidays.ValidationCheck()[pri:1, inst...)</span>
+                <span class="method-start">58089 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void testcases.CompanyHolidays.AddCompanyHolidayFullDay())</span>
+                <span class="method-start">58110 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">AddCompanyHolidayFullDay</span>
+                <span class="method-start">58111 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportWrapUp([TestResult name=AddCompanyHolidayFullDay status=SUCCESS method=CompanyHolidays.AddCompanyHolidayFul...)</span>
+                <span class="method-start">124783 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void testcases.CompanyHolidays.ActiveInactiveSearch())</span>
+                <span class="method-start">124786 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ActiveInactiveSearch</span>
+                <span class="method-start">124787 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportWrapUp([TestResult name=ActiveInactiveSearch status=SUCCESS method=CompanyHolidays.ActiveInactiveSearch()[p...)</span>
+                <span class="method-start">206874 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">64758 ms</span>
+                <span class="method-start">206885 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">close</span>
-                <span class="method-start">65465 ms</span>
+                <span class="method-start">207408 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

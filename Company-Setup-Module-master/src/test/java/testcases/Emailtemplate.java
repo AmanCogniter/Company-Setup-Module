@@ -12,7 +12,7 @@ public class Emailtemplate extends WebTestBase {
 	
 	static String Screenname = "<b>Emailtemplate </b>"; 
 
-	@Test(priority=1,enabled = false)
+	@Test(priority=1,enabled = true)
 	public void validationCheck()
 	{
 		test=getTest( Screenname  + ": Validation message on  Email Template screen");

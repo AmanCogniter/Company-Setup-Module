@@ -10,6 +10,8 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.j2objc.annotations.Property;
 import com.relevantcodes.extentreports.LogStatus;
@@ -80,10 +82,10 @@ WebDriver driver ;
 		String actualText;
 		String expectedText;
 
-		List<WebElement> errorMessageLocator = findMultipleElement(By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
+		List<WebElement> errorMessageLocator = findMultipleElement(By.xpath("//div[@class='form-group']//span[contains(@class,'invalid-feedback')]"), 45);
 		String[] expectedValue = {"Name","Type","Percentage","Status"};
 		for (Object expected : expectedValue) {
-			WebElement AsteriskField = findElementVisibility(By.xpath("//div[@class='row']//label[text()='" + expected + ":']"), 45);
+			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 45);
 			if (AsteriskField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");
 				logger.info("The Asterisk symbol is displayed for " + expected + " field");
@@ -207,16 +209,26 @@ WebDriver driver ;
 		 selectValueWithText(By.xpath("//table[@id='tblTaxandDiscount']/tbody/tr/td/a[@adjname='"+taxnewname+"']/../..//td[4]//select"), "Inactive", "Tax Active to Inactive", 25);
 	  }
 	  
-	  public void okConfirmButton() {
-		  staticWait(2000);
+	  public void taxokConfirmButton() {
+		  WebDriverWait wait = new WebDriverWait(driver,30);
+		  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@title='OK']")));
 			click(By.xpath("//button[@title='OK']"), "ok Button", 20);
-			staticWait(2000);
+			
+	//		driver.navigate().refresh();
+
+		}
+	  public void discountOkButton() {
+		  WebDriverWait wait = new WebDriverWait(driver,30);
+		  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@data-original-title='OK']")));
+			click(By.xpath("//button[@data-original-title='OK']"), "ok Button", 20);
+			
 	//		driver.navigate().refresh();
 
 		}
 	  
 	  public void ChangeDiscountStatus()
 	  {
+		  staticWait(3000);
 		  selectValueWithText(By.xpath("//table[@id='tblTaxandDiscount']/tbody/tr/td/a[@adjname='"+Discountnewname+"']/../..//td[4]//select"), "Inactive", "Discount Active to Inactive", 25);
 	  
 	  }

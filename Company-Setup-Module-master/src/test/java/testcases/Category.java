@@ -14,7 +14,7 @@ public class Category extends WebTestBase {
 	
 	static String Screenname = "<b> Category </b>";
 	/* Validation check and Userguide Check and cancel button*/
-	@Test
+	@Test(priority = 1)
 	public void addCategoryValidationCheck()
 	{
 		
@@ -29,7 +29,7 @@ public class Category extends WebTestBase {
 	
 	
 	/* Add Category */
-	@Test
+	@Test(priority = 2)
 	public void  addCategory()
 	{
 		
@@ -44,7 +44,7 @@ public class Category extends WebTestBase {
 	
 	
 	/* Search and Edit category */
-	@Test(dependsOnMethods = {"addCategory"})
+	@Test(priority = 3, dependsOnMethods = {"addCategory"})
 	public void editCategory()
 	{
 		test = getTest(Screenname + " :Search and Edit category");
@@ -55,7 +55,7 @@ public class Category extends WebTestBase {
 	}
 	
 	/* Active / Inactive from Action Button and Delete Functionality */
-	@Test(dependsOnMethods = {"addCategory"})
+	@Test(priority = 4, dependsOnMethods = {"addCategory"})
 	public void CategoryListing()
 	{
 		test = getTest(Screenname + ": Active / Inactive from Action Button  and Delete Functionality");

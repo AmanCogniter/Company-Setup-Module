@@ -58,13 +58,13 @@ public class TaxAndDiscountAction {
 		public void ActiveToInactiveTax()
 		{
 			taxanddiscount.ChangeTaxStatus();
-			taxanddiscount.okConfirmButton();
+			taxanddiscount.taxokConfirmButton();
 		}
 		
 		public void ActiveToInactiveDiscount()
 		{
 			taxanddiscount.ChangeDiscountStatus();
-			taxanddiscount.okConfirmButton();
+			taxanddiscount.discountOkButton();
 		}
 		
 }

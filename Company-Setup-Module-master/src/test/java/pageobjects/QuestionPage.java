@@ -81,9 +81,9 @@ public class QuestionPage extends WebBasePage{
 
 		List<WebElement> errorMessageLocator = findMultipleElement(
 				By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
-		String[] expectedValue = { "Title" };
+		String[] expectedValue = { "Title","Status" };
 		for (Object expected : expectedValue) {
-			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']"), 45);
+			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 45);
 			if (AsteriskField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");
 				logger.info("The Asterisk symbol is displayed for " + expected + " field");
@@ -136,6 +136,7 @@ public class QuestionPage extends WebBasePage{
 	
 	public void verifyAddConfirmationMessage()
 	{
+		staticWait(2000);
 		findElementVisibility(By.xpath("//div[@id='notifymessage']/div/span"), 30);
 		String  Message = driver.findElement(By.xpath("//div[@id='notifymessage']/div/span")).getText(); 
 		 if(Message.equalsIgnoreCase("Question has been successfully added."))

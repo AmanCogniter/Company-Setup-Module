@@ -122,9 +122,9 @@ public class PaymentGatewayPage extends WebBasePage {
 
 			List<WebElement> errorMessageLocator = findMultipleElement(
 					By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
-			String[] expectedValue = {"Payment Gateway Type","Description"};
+			String[] expectedValue = {"Payment Gateway Type","Status","Description"};
 			for (Object expected : expectedValue) {
-				WebElement asterikField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']/span"), 45);
+				WebElement asterikField = findElementVisibility(By.xpath("//label[text()='" + expected + "']"), 45);
 
 				if (asterikField != null) {
 					getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for" + expected + " field");

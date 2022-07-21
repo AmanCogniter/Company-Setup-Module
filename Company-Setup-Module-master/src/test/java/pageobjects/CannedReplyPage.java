@@ -134,6 +134,12 @@ public class CannedReplyPage extends WebBasePage{
         	  enter(By.xpath("//input[@id='TemplateName']"),prop.getProperty("privatecannedreply")+datevalue, "PrivateCannedReply", 35);
         	  
          }
+          public void selectStatus() {
+        	  click(By.xpath("//select[@id='StatusId']"),"Status",20);
+        	 // String status = driver.findElement(By.xpath("//select[@id='StatusId']/option")).getText();
+        	  selectValueWithText(By.xpath("//select[@id='StatusId']"), "Active", "Status", 25);
+        	  
+          }
           public void EnterDescription()
  	     {
  				

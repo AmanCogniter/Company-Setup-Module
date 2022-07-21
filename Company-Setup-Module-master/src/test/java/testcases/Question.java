@@ -18,7 +18,7 @@ public class Question extends WebTestBase {
 	 static String Screenname ="<b> Question /b>";
 		
 		
-		@Test(enabled=false)
+		@Test(priority=1,enabled=true)
 		public void validationCheck()
 		{
 			test=getTest(Screenname + ": Validation message on Add Question");

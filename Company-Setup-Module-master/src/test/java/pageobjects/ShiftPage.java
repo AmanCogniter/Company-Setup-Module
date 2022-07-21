@@ -82,9 +82,9 @@ public class ShiftPage extends WebBasePage {
 		String expectedText;
 
 		List<WebElement> errorMessageLocator = findMultipleElement(By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
-		String[] expectedValue = {"Shift Name","End Time","Shift Rate","Over Time Rate","Location"};
+		String[] expectedValue = {"Shift Name","Start Time","End Time","Shift Rate","Over Time Rate","Location"};
 		for (Object expected : expectedValue) {
-			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']"), 45);
+			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 45);
 			if (AsteriskField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");
 				logger.info("The Asterisk symbol is displayed for " + expected + " field");

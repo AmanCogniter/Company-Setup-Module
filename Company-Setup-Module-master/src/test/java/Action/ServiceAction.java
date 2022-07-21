@@ -41,6 +41,7 @@ public class ServiceAction {
 		servicepage.clickOnAdd();
 		servicepage.enterServiceName();
 		servicepage.selectUser();
+		servicepage.selectStatus();
 		servicepage.enterDescription();
 		servicepage.save();
 		servicepage.verifyAddConfirmationMessage();

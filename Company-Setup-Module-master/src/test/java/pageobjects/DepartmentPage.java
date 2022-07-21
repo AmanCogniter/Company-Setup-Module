@@ -86,7 +86,7 @@ public class DepartmentPage extends WebBasePage {
 				By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
 		String[] expectedValue = { "Department Name"};
 		for (Object expected : expectedValue) {
-			WebElement asterikField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']/span"), 45);
+			WebElement asterikField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 45);
 
 			if (asterikField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for" + expected + " field");

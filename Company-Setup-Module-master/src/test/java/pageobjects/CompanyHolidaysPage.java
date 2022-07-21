@@ -70,12 +70,13 @@ public class CompanyHolidaysPage extends WebBasePage {
      
      public void clickOnCompanyHolidays()
      {
+    	 staticWait(3000);
     	 clickByJavascript(By.xpath("//a[text()='Company Holidays']"),"Company Holidays",20);
      }
      
       public void clickOnAdd()
       {
-    	
+    	staticWait(3000);
     	/* List<WebElement> rows = table.findElements(By.tagName("tr"));
     	 List<WebElement> columncount = null;
     	 
@@ -98,6 +99,7 @@ public class CompanyHolidaysPage extends WebBasePage {
       
       public void getHolidayDates()
       {
+    	  staticWait(3000);
     	  selectValueWithValue(By.xpath("//select[@id='pageSize']"),"100", "Page Size",35);
           waitForLoader(20);
          List<WebElement> holidaydates=  findMultipleElement(By.xpath("//table[@id='tblHR']//tr/td[2]"), 35);
@@ -230,9 +232,10 @@ public class CompanyHolidaysPage extends WebBasePage {
     		String expectedText;
 
     		List<WebElement> errorMessageLocator = findMultipleElement(By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
-    		String[] expectedValue = {"Name","Location"};
+    		String[] expectedValue = {"Name","Date ","Location"};
     		for (Object expected : expectedValue) {
-    			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']"), 45);
+    			//WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']"), 45);
+    			WebElement AsteriskField = findElementVisibility(By.xpath("//label[contains(text(),'" + expected + "')]/ancestor::div[@class='form-group']/descendant::span[contains(@class,'mandatory')]"), 45);
     			if (AsteriskField != null) {
     				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");
     				logger.info("The Asterisk symbol is displayed for " + expected + " field");
@@ -325,15 +328,14 @@ public class CompanyHolidaysPage extends WebBasePage {
         	HandleSuccessMessage();
         	}
     		}
-    	 else
-    	 {
-    		save(); 
-    		HandleSuccessMessage();
-    	 }
+			/*
+			 * else { save(); HandleSuccessMessage(); }
+			 */
     	  }
     	  catch(NoSuchElementException e)
     	  {
-    		  e.printStackTrace();
+    		  save(); 
+      		HandleSuccessMessage();
     	  }
     	//  WebElement CurrentDate = driver.findElement(By)
     	//  HolidayDate = getText(By.id("txtHolidateDate"), 25);

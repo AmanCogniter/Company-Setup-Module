@@ -45,26 +45,30 @@ WebDriver driver ;
 	
 
 	public void clickFullMenuDropDown() {
-		click(By.cssSelector("a#navbarDropdownPortfolio"), "Full Menu", 30);
 		staticWait(2000);
+		click(By.xpath("//span[text()='Full Menu']"), "Full Menu", 30);
+		
 	}
 
 	public void clickCompanySetupLink() {
+		staticWait(2000);
 		//click(By.xpath("//a[contains(text(),'COMPANY SETUP')]"), "Company Setup Link", 30);
 		click(By.xpath("//li[@data-name='COMPANY SETUP']"),"Company Setup Link", 30);
-		staticWait(2000);
+		
 	}
 
 	public void clickCompanySetupPage() {
-		click(By.xpath("//a[contains(text(),'Company Setup')]"), " Company Setup Page", 30);
 		staticWait(2000);
+		click(By.xpath("//a[contains(text(),'Company Setup')]"), " Company Setup Page", 30);
+		
 	}
 
 	public void clickOnService() {
-		clickByJavascript(By.xpath("//a[text()='Service']"), "Service", 20);
 		staticWait(2000);
+		clickByJavascript(By.xpath("//a[text()='Service' and @aria-controls='servicemaster']"), "Service", 20);
 	}
 	public void clickOnAdd() {
+		staticWait(2000);
 
 		click(By.xpath("//a[@id='ancCreateServiceMaster']"), "Add Service", 25);
 	}
@@ -81,9 +85,9 @@ WebDriver driver ;
 
 		List<WebElement> errorMessageLocator = findMultipleElement(
 				By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
-		String[] expectedValue = {"Name","User"};
+		String[] expectedValue = {"Name","User","Status"};
 		for (Object expected : expectedValue) {
-			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']"), 45);
+			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 45);
 			if (AsteriskField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");
 				logger.info("The Asterisk symbol is displayed for " + expected + " field");
@@ -148,6 +152,12 @@ WebDriver driver ;
 		
 		//selectValueWithIndex(By.id("ServiceUserIds"),2, "Select User", 25);
 	}
+	public void selectStatus() {
+	  	  click(By.xpath("//select[@id='StatusId']"),"Status",20);
+	  	 // String status = driver.findElement(By.xpath("//select[@id='StatusId']/option")).getText();
+	  	  selectValueWithText(By.xpath("//select[@id='StatusId']"), "Active", "Status", 25);
+	  	  
+	    }
 	
 	public void enterSearchText() {
 		staticWait(2000);

@@ -11,7 +11,7 @@ import utils.WebTestBase;
 public class CannedReply extends WebTestBase {
 
 	static String Screenname ="<b>CannedReply</b>";
-	@Test(priority=1,enabled =false)
+	@Test(priority=1,enabled =true)
 	public void ValidationCheck()
 	{
 		
@@ -35,7 +35,7 @@ public class CannedReply extends WebTestBase {
 		cannedaction.AddPublicCannedReply();
 	}
 	
-	@Test(priority=3 , dependsOnMethods ="AddCannedReply" , enabled =false)
+	@Test(priority=3 , dependsOnMethods ="AddCannedReply" , enabled =true)
 	public void SearchActiveInactiveDeleteCannedReply()
 	{
 		test=getTest(Screenname + " : Canned Reply listing ");

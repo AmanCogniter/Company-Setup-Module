@@ -84,7 +84,7 @@ public class UserTitlePage extends WebBasePage {
 				By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
 		String[] expectedValue = { "Title" };
 		for (Object expected : expectedValue) {
-			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']"), 45);
+			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 45);
 			if (AsteriskField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");
 				logger.info("The Asterisk symbol is displayed for " + expected + " field");

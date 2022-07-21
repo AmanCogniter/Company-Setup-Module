@@ -12,7 +12,7 @@ public class CompanyHolidays extends WebTestBase {
 	
 	static String Screenname = " <b> CompanyHolidays </b>";
 	
-	@Test(priority=1, enabled= false)
+	@Test(priority=1, enabled= true)
 	public void ValidationCheck()
 	{
 		test=getTest(Screenname + ": Validation message on Add Holiday");
@@ -33,7 +33,7 @@ public class CompanyHolidays extends WebTestBase {
 	}
 	
 	
-	@Test(priority=3,enabled= false)
+	@Test(priority=3,enabled=true)
 	 public void ActiveInactiveSearch()
 	{
 		test=getTest( Screenname + " : Search Active Inactive Company Holiday");

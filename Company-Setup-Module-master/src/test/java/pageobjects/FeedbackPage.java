@@ -84,7 +84,7 @@ public class FeedbackPage extends WebBasePage {
 					By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
 			String[] expectedValue = { "Feedback Name" };
 			for (Object expected : expectedValue) {
-				WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()= '" + expected +"' ]"), 45);
+				WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()= '" + expected +":' ]"), 45);
 				if (AsteriskField != null) {
 					getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");
 					logger.info("The Asterisk symbol is displayed for " + expected + " field");

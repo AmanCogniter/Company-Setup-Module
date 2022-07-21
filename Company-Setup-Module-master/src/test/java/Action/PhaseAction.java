@@ -42,6 +42,7 @@ public class PhaseAction {
 		String phasename =phasepage.enterPhaseName();
 		phasepage.enterDescription();
 		phasepage.save();
+		phasepage.closeManagePhase();
 		//phasepage.verifyAddConfirmationMessage();
 	//	phasepage.HandleSuccessMessage();
 		return phasename;

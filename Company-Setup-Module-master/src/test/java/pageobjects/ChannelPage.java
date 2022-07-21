@@ -80,9 +80,12 @@ public class ChannelPage extends WebBasePage {
 
 		List<WebElement> errorMessageLocator = findMultipleElement(
 				By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
-		String[] expectedValue = { "Channel Name" };
+		String[] expectedValue = { "Channel Name","Status" };
 		for (Object expected : expectedValue) {
-			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']"), 45);
+			/*
+			 * WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='"+ expected + ":']"), 45);
+			 */
+			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 45);
 			if (AsteriskField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");
 				logger.info("The Asterisk symbol is displayed for " + expected + " field");
@@ -128,6 +131,12 @@ public class ChannelPage extends WebBasePage {
 		Channelnewname = Channelname;
 
 	}
+	public void selectStatus() {
+  	  click(By.xpath("//select[@id='StatusId']"),"Status",20);
+  	 // String status = driver.findElement(By.xpath("//select[@id='StatusId']/option")).getText();
+  	  selectValueWithText(By.xpath("//select[@id='StatusId']"), "Active", "Status", 25);
+  	  
+    }
 
 	public void enterDescription() {
 		enter(By.id("ChannelDescription"), prop.getProperty("Description"), "Channel Description", 25);

@@ -41,7 +41,7 @@ public class CompanyHolidaysAction {
 		holidayPage.SelectLocation();
 		holidayPage.Description();
 		holidayPage.SelectDate();
-	//	holidayPage.save();
+		holidayPage.save();
 		//holidayPage.HandleSuccessMessage();	
 	}
 	
@@ -53,10 +53,10 @@ public class CompanyHolidaysAction {
 		 holidayPage.Resetbutton();
 		 holidayPage.SelectInactive();
 		 holidayPage.okConfirmButton();	
-		holidayPage.HandleSuccessMessage();	
+		//holidayPage.HandleSuccessMessage();	
 		 holidayPage.SelectActive();
 		 holidayPage.okConfirmButton();	
-		holidayPage.HandleSuccessMessage();	
+		//holidayPage.HandleSuccessMessage();	
 	 }
 	
 

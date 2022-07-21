@@ -81,9 +81,9 @@ public class IndustryTypePage extends WebBasePage {
 
 		List<WebElement> errorMessageLocator = findMultipleElement(
 				By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
-		String[] expectedValue = {"Industry Type"};
+		String[] expectedValue = {"Industry Type","Status"};
 		for (Object expected : expectedValue) {
-			WebElement asterikField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']/span"), 45);
+			WebElement asterikField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 45);
 
 			if (asterikField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for" + expected + " field");
@@ -142,6 +142,7 @@ public class IndustryTypePage extends WebBasePage {
 	 
 	 public void searchIndustryType()
 		{
+		 staticWait(3000);
 			enter(By.id("search"), industrytypename, "Search Field ", 25);
 		}
 		
@@ -166,6 +167,7 @@ public class IndustryTypePage extends WebBasePage {
 		
 		public void editIndustryType()
 		{
+			staticWait(1000);
 			clickByJavascript(By.id("ancEditdepartment"), "Edit IndustryType", 25);
 		}
 	

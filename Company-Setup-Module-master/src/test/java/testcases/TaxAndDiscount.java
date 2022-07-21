@@ -13,7 +13,7 @@ public class TaxAndDiscount extends WebTestBase {
 	
 	static String Screenname ="<b> Tax And Disocunt </b>";
 	
-	@Test(priority=1)
+	@Test(priority=1,enabled=false)
 	public void ValidationCheck()
 	{
 		

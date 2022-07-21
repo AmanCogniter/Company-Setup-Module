@@ -39,6 +39,7 @@ public class ChannelAction {
 	{
 		channelPage.clickOnAdd();
 		channelPage.enterChannelName();
+		channelPage.selectStatus();
 		channelPage.save();
 		
 	}

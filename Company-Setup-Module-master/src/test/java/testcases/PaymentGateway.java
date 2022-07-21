@@ -14,7 +14,7 @@ public class PaymentGateway extends WebTestBase {
 	static String Screenname = "<b> Payment Gateway </b>";
 	
 	
-	@Test(priority=1 , enabled= false)
+	@Test(priority=1 , enabled= true)
 	public void addPaymentGatewayValidation()
 	{
 		

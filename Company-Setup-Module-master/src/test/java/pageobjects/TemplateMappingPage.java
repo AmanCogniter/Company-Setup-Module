@@ -91,7 +91,7 @@ public class TemplateMappingPage  extends WebBasePage{
 				By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 20);
 		String[] expectedValue = {"Template Name","Event Type"};
 		for (Object expected : expectedValue) {
-			WebElement asterikField = findElementVisibility(By.xpath("//table[@id='tableGlobalTaskList']//span[text()='" + expected + "']"), 20);
+			WebElement asterikField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 20);
 
 			if (asterikField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for" + expected + " field");

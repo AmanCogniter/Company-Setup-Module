@@ -36,7 +36,8 @@ public class StageAction {
 	 public void addNewStage()
 	 {
 		 
-		 stagepage.clickOnAdd(); 
+		 stagepage.clickOnAdd();
+		 
 		 stagepage.selectPhaseName();
 		 stagepage.enterStageName();
 		 stagepage.enterDescription();

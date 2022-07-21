@@ -37,6 +37,8 @@ public class PriorityAction {
 	{
 		prioritypage.clickOnAdd();
 		prioritypage.enterPriorityName();
+		prioritypage.selectStatus();
+		prioritypage.displayOrder();
 		prioritypage.enterDescription();
 		prioritypage.save();
 		prioritypage.verifyAddConfirmationMessage();

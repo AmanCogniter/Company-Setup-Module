@@ -92,14 +92,14 @@ public class EmailTemplatePage extends WebBasePage {
 			 
 			 /* In Dom Template Name label text different from another field */
 		        List<WebElement> errorMessageLocator = findMultipleElement(By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
-		        String[] expectedValue = {"Subject"};
+		        String[] expectedValue = {"Template Name","Subject"};
 		        for(Object expected : expectedValue)
 		        {
 		        	//WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected +":']"), 45);
 		        	//label[@class='lblctrlname']/span/parent::label[starts-with(text(),'TemplateContent')]
 		        	//label[@class='lblctrlname']/span/parent::label[text()='" + expected +":']
 		        	
-		        	WebElement AsteriskField = findElementVisibility(By.xpath("//label[@class='lblctrlname']/span/parent::label[starts-with(text(),'"+ expected +"')]"), 45);
+		        	WebElement AsteriskField = findElementVisibility(By.xpath("//label[contains(text(),'"+ expected +"')]/ancestor::div[@class='form-group']/descendant::span"), 45);
 		        	if (AsteriskField!= null)
 		        	{
 		        		  getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");

@@ -44,24 +44,27 @@ public class StagePage extends WebBasePage {
 	}
 
 	public void clickFullMenuDropDown() {
-		click(By.cssSelector("a#navbarDropdownPortfolio"), "Full Menu", 30);
 		staticWait(2000);
+		click(By.xpath("//span[text()='Full Menu']"), "Full Menu", 30);
+	
 	}
 
 	public void clickCompanySetupLink() {
+		staticWait(2000);
 		//click(By.xpath("//a[contains(text(),'COMPANY SETUP')]"), "Company Setup Link", 30);
 		click(By.xpath("//li[@data-name='COMPANY SETUP']"),"Company Setup Link", 30);
-		staticWait(2000);
+		
 	}
 
 	public void clickCompanySetupPage() {
-		click(By.xpath("//a[contains(text(),'Company Setup')]"), " Company Setup Page", 30);
 		staticWait(2000);
+		click(By.xpath("//a[contains(text(),'Company Setup')]"), " Company Setup Page", 30);
+	
 	}
 
 	public void clickOnStage() {
-		clickByJavascript(By.xpath("//ul[@id='upper']//li/a[text()='Stage']"), "Stage", 20);
 		staticWait(2000);
+		clickByJavascript(By.xpath("//ul[@id='upper']//li/a[text()='Stage']"), "Stage", 20);
 	}
 	
 	
@@ -81,10 +84,10 @@ public class StagePage extends WebBasePage {
 		String expectedText;
 
 		List<WebElement> errorMessageLocator = findMultipleElement(
-				By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"), 45);
+				By.xpath("//div[@class='form-group']//span[contains(@class,'invalid-feedback')]"), 45);
 		String[] expectedValue = { "Stage Name" };
 		for (Object expected : expectedValue) {
-			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='" + expected + ":']"), 45);
+			WebElement AsteriskField = findElementVisibility(By.xpath("//label[text()='"+ expected +"']/ancestor::div[@class='form-group']/descendant::span[@class='mandatory']"), 45);
 			if (AsteriskField != null) {
 				getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for " + expected + " field");
 				logger.info("The Asterisk symbol is displayed for " + expected + " field");
@@ -135,12 +138,14 @@ public class StagePage extends WebBasePage {
 			String NewlyaddedPhase = phaseaction.addPhase();
 			System.out.println(NewlyaddedPhase);
 			
-			staticWait(4000);
-			clickFullMenuDropDown();
-			clickCompanySetupLink();
-			clickCompanySetupPage();
-			clickOnStage();
-			clickOnAdd();
+			
+			  staticWait(4000); 
+			  clickFullMenuDropDown(); 
+			  clickCompanySetupLink();
+			  clickCompanySetupPage(); 
+			  clickOnStage(); 
+			  clickOnAdd();
+			 
 			
 			selectValueWithText(By.xpath("//select[@id='PhaseId']"), NewlyaddedPhase,"Phase Name Dropdown",25);			
 		

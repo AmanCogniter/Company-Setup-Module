@@ -44,6 +44,7 @@ public class CannedReplyAction {
 	{
 		cannedpage.AddButton();
 		cannedpage.EnterPublicCannedReplyName();
+		cannedpage.selectStatus();
 		cannedpage.PublicCheckBox();
 		cannedpage.EnterDescription();
 		cannedpage.SaveButton();	

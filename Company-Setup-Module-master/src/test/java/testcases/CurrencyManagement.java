@@ -15,7 +15,7 @@ public class CurrencyManagement extends WebTestBase {
 	
 	static String Screenname = "<b> Currency Management </b>";
 	/* Save button Enable/disable  and check validation message on Source Currency and Currency Rate*/
-	@Test
+	@Test(priority = 1)
 	public void currencyValidationCheck()
 	{
 		
@@ -34,7 +34,7 @@ public class CurrencyManagement extends WebTestBase {
 	
 	
 	/* check validation message if select already selected source currency*/
-	@Test
+	@Test(priority = 2)
 	public void SourcecurrencyDuplicateValidation()
 	{
 		
@@ -50,7 +50,7 @@ public class CurrencyManagement extends WebTestBase {
 	
 	
 	/* Already selected Base currency validation message */
-	@Test
+	@Test(priority = 3)
 	public void BasecurrencyDuplicateValidation()
 	{
 		
@@ -63,7 +63,7 @@ public class CurrencyManagement extends WebTestBase {
 	}
 	
 	
-	@Test
+	@Test(priority = 4)
 	
 	public void addNewCurrencyAndDelete()
 	{
